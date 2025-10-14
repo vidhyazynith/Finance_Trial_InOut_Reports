@@ -1,0 +1,623 @@
+.reports-billing-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.reports-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.reports-header h1 {
+  font-size: 2rem;
+  margin: 0 0 8px 0;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.reports-header p {
+  margin: 4px 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.reports-header .subtitle {
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: 400;
+}
+
+/* Main Content Grid */
+.main-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Card Base Styles */
+.report-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.report-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Header Styles */
+.card-header {
+  margin-bottom: 20px;
+  text-align: left;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.card-header h3 {
+  font-size: 1.3rem;
+  margin: 0 0 8px 0;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.card-header p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Form Styles */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.form-select,
+.form-input,
+.date-input,
+.item-input,
+.table-input,
+.form-textarea {
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background: white;
+  transition: all 0.2s;
+}
+
+.form-select:focus,
+.form-input:focus,
+.date-input:focus,
+.item-input:focus,
+.table-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+/* Form Grid for 2 columns */
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+/* Section Header for Items */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.section-header label {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+/* Date Range */
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.date-input {
+  flex: 1;
+  text-align: center;
+}
+
+.date-range span {
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+/* Export Buttons */
+.export-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.export-btn {
+  flex: 1;
+  padding: 10px 16px;
+  border: 2px solid;
+  border-radius: 8px;
+  background: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.export-btn.pdf {
+  color: #dc2626;
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+
+.export-btn.pdf:hover {
+  background: #dc2626;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.export-btn.excel {
+  color: #059669;
+  border-color: #059669;
+  background: #f0fdf4;
+}
+
+.export-btn.excel:hover {
+  background: #059669;
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Invoice Generation */
+.invoice-generation-card {
+  background: white;
+}
+
+/* Invoice Items Section */
+.invoice-items-section {
+  margin: 15px 0;
+}
+
+/* Add Item Button */
+.add-item-btn {
+  padding: 8px 16px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.add-item-btn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* Invoice Items Table */
+.invoice-items-table {
+  margin-top: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 0.85rem;
+  background: white;
+}
+
+.invoice-items-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.invoice-items-table th {
+  background: #f8fafc;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.8rem;
+  padding: 12px 8px;
+  border-bottom: 2px solid #e5e7eb;
+  text-align: left;
+}
+
+.invoice-items-table td {
+  padding: 8px;
+  border-bottom: 1px solid #f3f4f6;
+  text-align: left;
+}
+
+.invoice-items-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.table-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.table-input:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+/* Remove Button */
+.remove-btn {
+  padding: 6px 12px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.remove-btn:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+/* Totals Summary */
+.totals-summary {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  border: 1px solid #e9ecef;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 0.9rem;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0 0 0;
+  font-weight: bold;
+  font-size: 1rem;
+  border-top: 2px solid #495057;
+  margin-top: 5px;
+}
+
+/* Generate Invoice Button */
+.generate-invoice-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.generate-invoice-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+}
+
+.generate-invoice-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Recent Invoices */
+.recent-invoices-card {
+  background: white;
+}
+
+.recent-invoices-table {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 0.85rem;
+  background: white;
+}
+
+.recent-invoices-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-invoices-table th {
+  background: #f8fafc;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.8rem;
+  padding: 14px 10px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.recent-invoices-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.recent-invoices-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.invoice-number {
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 0.9rem;
+}
+
+.customer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.customer-name {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.customer-id {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  display: inline-block;
+  min-width: 70px;
+}
+
+.status-badge.paid {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.unpaid {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-badge.overdue {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.amount {
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 0.9rem;
+}
+
+.action-btn {
+  padding: 6px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.action-btn.download:hover {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+  transform: translateY(-1px);
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+  .main-content-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .left-column,
+  .right-column {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reports-billing-container {
+    padding: 16px;
+  }
+  
+  .report-card {
+    padding: 20px;
+  }
+  
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .date-range {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .date-range span {
+    text-align: center;
+  }
+  
+  .export-buttons {
+    flex-direction: column;
+  }
+  
+  .recent-invoices-table {
+    overflow-x: auto;
+  }
+  
+  .recent-invoices-table table {
+    min-width: 600px;
+  }
+  
+  .invoice-items-table {
+    overflow-x: auto;
+  }
+  
+  .invoice-items-table table {
+    min-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reports-billing-container {
+    padding: 12px;
+  }
+  
+  .reports-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .report-card {
+    padding: 18px;
+  }
+  
+  .card-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .form-select,
+  .form-input,
+  .date-input,
+  .item-input,
+  .table-input,
+  .form-textarea {
+    padding: 8px 12px;
+  }
+  
+  .invoice-items-table th,
+  .invoice-items-table td,
+  .recent-invoices-table th,
+  .recent-invoices-table td {
+    padding: 10px 6px;
+    font-size: 0.8rem;
+  }
+  
+  .totals-summary {
+    padding: 12px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 360px) {
+  .reports-billing-container {
+    padding: 10px;
+  }
+  
+  .report-card {
+    padding: 16px;
+  }
+  
+  .card-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .form-section {
+    gap: 14px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .reports-billing-container {
+    background: white;
+    padding: 0;
+  }
+  
+  .report-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    break-inside: avoid;
+  }
+  
+  .generate-invoice-btn,
+  .add-item-btn,
+  .remove-btn,
+  .action-btn {
+    display: none;
+  }
+}
