@@ -617,11 +617,10 @@ const ReportsBilling = () => {
   return (
     <div className="reports-billing-container">
       {/* Header */}
-      <div className="reports-header">
-        <h1>Reports & Billing</h1>
-        <p>Welcome back, Admin</p>
-        <p className="subtitle">Generate financial reports and create invoices</p>
-      </div>
+      {/* <div className="reports-header">
+        
+        
+      </div> */}
 
       {/* Main Content Grid */}
       <div className="main-content-grid">

@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 //import reportRoutes from "./routes/reportRoutes.js";
 import billingRoutes from "./routes/billingRoutes.js";
 import transactionRoutes from "./routes/transactions.js"; // Fixed import name
+import companyRoutes from "./routes/companyRoutes.js"
 
 // Load environment variables
 dotenv.config();
@@ -24,6 +25,7 @@ mongoose
 //app.use("/api/reports", reportRoutes);
 app.use("/api/billing", billingRoutes);
 app.use('/api/transactions', transactionRoutes);
+app.use('/api/company', companyRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;

@@ -752,4 +752,104 @@
   .logout-btn {
     display: none;
   }
+  
+  /************************************************/
+  /* Settings Tabs Styles */
+.settings-container {
+  display: flex;
+  gap: 24px;
+  min-height: 600px;
+}
+
+.settings-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 250px;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.settings-tab {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  text-align: left;
+}
+
+.settings-tab:hover {
+  background: #f8fafc;
+  color: #334155;
+}
+
+.settings-tab.active {
+  background: #3b82f6;
+  color: white;
+}
+
+.settings-tab.active .tab-icon {
+  filter: brightness(0) invert(1);
+}
+
+.tab-icon {
+  font-size: 18px;
+  width: 24px;
+  text-align: center;
+}
+
+.settings-content {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.settings-tab-content {
+  padding: 32px;
+}
+
+.settings-tab-content h3 {
+  color: #1e293b;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.settings-tab-content p {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .settings-container {
+    flex-direction: column;
+  }
+  
+  .settings-tabs {
+    min-width: auto;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  
+  .settings-tab {
+    white-space: nowrap;
+    flex: 1;
+    justify-content: center;
+  }
+}
 }

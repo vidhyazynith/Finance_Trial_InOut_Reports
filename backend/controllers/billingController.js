@@ -303,11 +303,15 @@ export const generateInvoice = async (req, res) => {
     if (!company) {
       // Create default company info if none exists
       company = await Company.create({
-        name: "Zynith IT Solutions",
-        address: "123 Business Street, City, ST 12345",
-        email: "admin@zynith-it.com",
-        phone: "000-000-0000",
-        gst: "GSTIN123456789"
+      companyName: 'Zynith IT Solutions',
+    address: '123 Business Street, City, State 12345',
+    phone: '+1 (555) 123-4567',
+    email: 'contact@zynith-it.com',
+    website: 'https://www.zynith-it.com',
+    taxId: 'TAX-123456789',
+    currency: 'USD',
+    fiscalYear: 'January' 
+
       });
     }
 
@@ -355,7 +359,7 @@ export const generateInvoice = async (req, res) => {
     const columnWidth = 200;
 
     // ===== HEADER SECTION =====
-    doc.fontSize(20).font('Helvetica-Bold').text(company.name, leftColumn, currentY);
+    doc.fontSize(20).font('Helvetica-Bold').text(company.companyName, leftColumn, currentY);
     currentY += 35;
 
     doc.fontSize(10).font('Helvetica')
@@ -368,8 +372,8 @@ export const generateInvoice = async (req, res) => {
     doc.text(`Email: ${company.email || "contact@company.com"}`, leftColumn, currentY);
     currentY += 15;
 
-    if (company.gst) {
-      doc.text(`GST: ${company.gst}`, leftColumn, currentY);
+    if (company.taxId) {
+      doc.text(`GST: ${company.taxId}`, leftColumn, currentY);
       currentY += 15;
     }
 
@@ -602,11 +606,14 @@ export const downloadInvoice = async (req, res) => {
     let company = await Company.findOne();
     if (!company) {
       company = {
-        name: "Zynith IT Solutions",
-        address: "123 Business Street, City, ST 12345",
-        email: "admin@zynith-it.com",
-        phone: "000-000-0000",
-        gst: "GSTIN123456789"
+        companyName: 'Zynith IT Solutions',
+address: '123 Business Street, City, State 12345' ,
+phone: '+1 (555) 123-4567',
+email: 'contact@zynith-it.com',
+website: 'https://www.zynith-it.com',
+taxId: 'TAX-123456789',
+currency: 'USD',
+fiscalYear: 'January' 
       };
     }
 
@@ -629,7 +636,7 @@ export const downloadInvoice = async (req, res) => {
     const columnWidth = 200;
 
     // ===== HEADER SECTION =====
-    doc.fontSize(20).font('Helvetica-Bold').text(company.name, leftColumn, currentY);
+    doc.fontSize(20).font('Helvetica-Bold').text(company.companyName, leftColumn, currentY);
     currentY += 35;
 
     doc.fontSize(10).font('Helvetica')
@@ -642,8 +649,8 @@ export const downloadInvoice = async (req, res) => {
     doc.text(`Email: ${company.email || "contact@company.com"}`, leftColumn, currentY);
     currentY += 15;
 
-    if (company.gst) {
-      doc.text(`GST: ${company.gst}`, leftColumn, currentY);
+    if (company.taxId) {
+      doc.text(`GST: ${company.taxId}`, leftColumn, currentY);
       currentY += 15;
     }
 
