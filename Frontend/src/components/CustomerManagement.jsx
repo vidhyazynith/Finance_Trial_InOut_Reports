@@ -42,40 +42,38 @@ const CustomerManagement = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    
-    try {
-      if (editingCustomer) {
-        // Update existing customer
-        await axios.put(`http://localhost:5000/api/billing/customers/${editingCustomer._id}`, form);
-        alert('Customer updated successfully!');
-      } else {
-        // Add new customer
-        await axios.post('http://localhost:5000/api/billing/add-customer', form);
-        alert('Customer added successfully!');
-      }
-      
-      // Refresh customers list
-      await fetchCustomers();
-      
-      // Reset form
-      setForm({
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        company: '',
-        customerType: 'individual'
-      });
-      setShowAddForm(false);
-      setEditingCustomer(null);
-    } catch (error) {
-      alert('Error saving customer: ' + error.message);
-    } finally {
-      setLoading(false);
+  e.preventDefault();
+  setLoading(true);
+  
+  try {
+    const payload = { ...form }; // Only the form fields
+
+    if (editingCustomer) {
+      await axios.put(`http://localhost:5000/api/billing/customers/${editingCustomer._id}`, payload);
+      alert('Customer updated successfully!');
+    } else {
+      await axios.post('http://localhost:5000/api/billing/add-customer', payload);
+      alert('Customer added successfully!');
     }
-  };
+
+    await fetchCustomers();
+    setForm({
+      name: '',
+      email: '',
+      phone: '',
+      address: '',
+      company: '',
+      customerType: 'individual'
+    });
+    setShowAddForm(false);
+    setEditingCustomer(null);
+  } catch (error) {
+    alert('Error saving customer: ' + (error.response?.data?.message || error.message));
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   const handleEdit = (customer) => {
     setForm({

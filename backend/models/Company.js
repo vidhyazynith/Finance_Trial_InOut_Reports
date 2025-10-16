@@ -41,7 +41,7 @@ const companySchema = new mongoose.Schema({
   taxId: { type: String, trim: true },
   currency: {
     type: String,
-    enum: ['USD', 'EUR', 'GBP', 'INR', 'CAD', 'AUD'],
+    enum: ['USD', 'EURO', 'GBP', 'INR', 'CAD', 'AUD'],
     default: 'USD'
   },
   fiscalYear: {
